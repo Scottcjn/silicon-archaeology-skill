@@ -11,7 +11,8 @@ class RustChainBridge:
     def __init__(self, node_url="http://50.28.86.131"):
         self.node_url = node_url
         self.epoch_multipliers = {
-            "pre-1990": 5.0,
+            "pre-1980": 10.0,
+            "1980-1989": 5.0,
             "1990-1999": 2.5,
             "2000-2009": 1.5,
             "modern": 1.0
@@ -20,7 +21,8 @@ class RustChainBridge:
     def calculate_antiquity(self, manufacturing_year):
         """Maps silicon age to antiquity multiplier."""
         year = int(manufacturing_year)
-        if year < 1990: return self.epoch_multipliers["pre-1990"]
+        if year < 1980: return self.epoch_multipliers["pre-1980"]
+        if year < 1990: return self.epoch_multipliers["1980-1989"]
         if year < 2000: return self.epoch_multipliers["1990-1999"]
         if year < 2010: return self.epoch_multipliers["2000-2009"]
         return self.epoch_multipliers["modern"]
@@ -40,19 +42,19 @@ class RustChainBridge:
             "attestation_type": "Silicon_Archaeology_v1"
         }
         
-        print(f"📡 [BRIDGE] Submitting PoA Shard for {payload['model']}...")
+        print(f"[BRIDGE] Submitting PoA Shard for {payload['model']}...")
         
         try:
             async with httpx.AsyncClient() as client:
                 r = await client.post(f"{self.node_url}/attest/submit", json=payload)
                 if r.status_code == 200:
-                    print("💎 [SUCCESS] Attestation accepted by RustChain node.")
+                    print("[SUCCESS] Attestation accepted by RustChain node.")
                     return True
                 else:
-                    print(f"⚠️  [BRIDGE] Node responded with: {r.status_code}")
+                    print(f"[BRIDGE] Node responded with: {r.status_code}")
                     return False
         except Exception as e:
-            print(f"❌ [BRIDGE] Connection failed: {str(e)}")
+            print(f"[BRIDGE] Connection failed: {str(e)}")
             return False
 
 if __name__ == "__main__":
