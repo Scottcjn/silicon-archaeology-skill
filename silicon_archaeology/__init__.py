@@ -17,10 +17,19 @@ from .scanner import (
     get_cpu_info,
     classify_epoch,
     estimate_year,
-    SILICON_EPOCHS
+    SILICON_EPOCHS as SCANNER_EPOCHS
 )
 
-__version__ = '0.1.0'
+from .stratigraphy import (
+    classify_hardware,
+    get_epoch_info,
+    get_known_hardware,
+    to_json as stratigraphy_to_json,
+    SILICON_EPOCHS,
+    KNOWN_HARDWARE
+)
+
+__version__ = '0.2.0'
 __all__ = [
     # Catalog
     'catalog_asset',
@@ -34,5 +43,12 @@ __all__ = [
     'get_cpu_info',
     'classify_epoch',
     'estimate_year',
-    'SILICON_EPOCHS'
+    'SCANNER_EPOCHS',
+    # Stratigraphy
+    'classify_hardware',
+    'get_epoch_info',
+    'get_known_hardware',
+    'stratigraphy_to_json',
+    'SILICON_EPOCHS',
+    'KNOWN_HARDWARE'
 ]
