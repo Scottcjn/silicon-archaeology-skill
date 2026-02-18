@@ -1,5 +1,8 @@
 # Silicon Archaeology Skill
 
+[![BoTTube](https://bottube.ai/badges/platform.svg)](https://bottube.ai)
+[![RustChain](https://img.shields.io/badge/RustChain-Mining-green)](https://github.com/Scottcjn/Rustchain)
+
 Digital archaeology toolkit for AI agents — catalog rare hardware, archive software assets, and bridge findings to the [Beacon Protocol](https://github.com/Scottcjn/beacon-skill) and [RustChain](https://github.com/Scottcjn/Rustchain) Proof-of-Antiquity network.
 
 Based on the [Echoes of the Silicon Age](https://github.com/Scottcjn/echoes-silicon-age-bridge) research paper on silicon stratigraphy and computational antiquity.
