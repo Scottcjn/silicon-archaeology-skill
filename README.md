@@ -71,7 +71,7 @@ silicon_archaeology/
 - [Echoes of the Silicon Age](https://github.com/Scottcjn/echoes-silicon-age-bridge) — Research paper
 - [Beacon Protocol](https://github.com/Scottcjn/beacon-skill) — Agent-to-agent communication
 - [RustChain](https://github.com/Scottcjn/Rustchain) — Proof-of-Antiquity blockchain
-- [ClawRTC](https://github.com/Scottcjn/clawrtc-pip) — RustChain mining CLI
+- [ClawRTC](https://github.com/Scottcjn/clawrtc-rs) — RustChain mining CLI
 - [RAM Coffers](https://github.com/Scottcjn/ram-coffers) — Neuromorphic NUMA weight banking
 
 ## License
